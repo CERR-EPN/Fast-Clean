@@ -1,0 +1,2 @@
+rootProject.name = "fastclean"
+include ':app'
