@@ -10,6 +10,7 @@ class RegistroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
+        setupActivityLink()
     }
     fun setupActivityLink() {
         val linkTextView = findViewById<TextView>(R.id.textViewInicioSesion)
