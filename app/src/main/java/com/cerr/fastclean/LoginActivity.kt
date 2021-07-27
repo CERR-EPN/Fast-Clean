@@ -15,7 +15,6 @@ class LoginActivity : AppCompatActivity() {
     lateinit var editTextPassword:EditText
     lateinit var buttonLogin:Button
     lateinit var buttonNewUser:Button
-    lateinit var mediaPlayer: MediaPlayer
     lateinit var checkBoxRecordarme: CheckBox
     lateinit var textViewRegistro: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,10 +31,7 @@ class LoginActivity : AppCompatActivity() {
             setupActivityLink()
         }
     }
-    override fun onDestroy() {
-        mediaPlayer.release()
-        super.onDestroy()
-    }
+
     fun setupActivityLink() {
         val linkTextView = findViewById<TextView>(R.id.textViewRegistro)
         linkTextView.setTextColor(Color.BLUE)
