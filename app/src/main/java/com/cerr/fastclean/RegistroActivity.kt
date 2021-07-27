@@ -16,7 +16,7 @@ class RegistroActivity : AppCompatActivity() {
         val linkTextView = findViewById<TextView>(R.id.textViewInicioSesion)
         linkTextView.setTextColor(Color.BLUE)
         linkTextView.setOnClickListener {
-            val switchActivityIntent = Intent(this, RegistroActivity::class.java)
+            val switchActivityIntent = Intent(this, LoginActivity::class.java)
             startActivity(switchActivityIntent)
         }
     }
