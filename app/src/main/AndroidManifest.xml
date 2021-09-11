@@ -49,11 +49,11 @@
         <activity
             android:name=".PrincipalActivity"
             android:label="Inicio de Sesión"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:theme="@style/Theme.AppCompat.Light"
             android:parentActivityName=".LoginActivity">
         </activity>
         <activity android:name=".ServicioActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".PagarActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:theme="@style/Theme.AppCompat.Light"
             android:parentActivityName=".ServicioActivity">
         </activity>
         <activity
