@@ -4,36 +4,37 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Button
 import android.widget.ImageButton
 
 class PrincipalActivity : AppCompatActivity() {
-    lateinit var ImageButtonCasa: ImageButton
-    lateinit var ImageButtonEdificio: ImageButton
-    lateinit var ImageButtonOficina: ImageButton
-    lateinit var ImageButtonEventos: ImageButton
+    lateinit var ButtonCasa: Button
+    lateinit var ButtonEdificio: Button
+    lateinit var ButtonOficina: Button
+    lateinit var ButtonEventos: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
-        ImageButtonCasa = findViewById(R.id.imageButtonCasa)
-        ImageButtonEdificio = findViewById(R.id.imageButtonEdificio)
-        ImageButtonOficina = findViewById(R.id.imageButtonOficina)
-        ImageButtonEventos = findViewById(R.id.imageButtonEventos)
-        ImageButtonCasa.setOnClickListener{
+        ButtonCasa = findViewById(R.id.buttonCasa)
+        ButtonEdificio = findViewById(R.id.buttonEdificio)
+        ButtonOficina = findViewById(R.id.buttonOficina)
+        ButtonEventos = findViewById(R.id.buttonEventos)
+        ButtonCasa.setOnClickListener{
             val intencion = Intent(this, ElegirActivity::class.java)
             startActivity(intencion)
 
         }
-        ImageButtonOficina.setOnClickListener{
+        ButtonOficina.setOnClickListener{
             val intencion = Intent(this, ElegirActivity::class.java)
             startActivity(intencion)
 
         }
-        ImageButtonEventos.setOnClickListener{
+        ButtonEventos.setOnClickListener{
             val intencion = Intent(this, ElegirActivity::class.java)
             startActivity(intencion)
 
         }
-        ImageButtonEdificio.setOnClickListener{
+        ButtonEdificio.setOnClickListener{
             val intencion = Intent(this, ElegirActivity::class.java)
             startActivity(intencion)
 

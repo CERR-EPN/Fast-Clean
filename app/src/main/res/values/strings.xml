@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">fastclean</string>
     <string name="title_activity_maps">Map</string>
+
+    //Strings Selecciones
+    <string name="limpieza_casa">Casa</string>
+    <string name="limpieza_oficina">Oficina</string>
+    <string name="limpieza_edificio">Edificio</string>
+    <string name="limpieza_evento">Evento</string>
+
+    //Strings Botones
+
+    <string name="seleccionar">Seleccionar</string>
 </resources>
