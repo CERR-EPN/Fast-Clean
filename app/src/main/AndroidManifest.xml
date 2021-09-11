@@ -16,7 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fastclean">
         <activity android:name=".ElegirActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".PrincipalActivity"
+            >
+        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -40,22 +43,14 @@
         </activity>
         <activity
             android:name=".RegistroActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".LoginActivity">
         </activity>
         <activity
             android:name=".PrincipalActivity"
             android:label="Inicio de Sesión"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".LoginActivity">
         </activity>
         <activity android:name=".ServicioActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -66,12 +61,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PagarActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".ServicioActivity">
         </activity>
         <activity
             android:name=".MapsActivity"

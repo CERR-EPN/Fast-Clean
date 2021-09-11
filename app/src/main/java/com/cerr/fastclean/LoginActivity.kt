@@ -10,7 +10,6 @@ import android.widget.TextView
 class LoginActivity : AppCompatActivity() {
     lateinit var buttonLogin: Button
     lateinit var textViewRegistro: TextView
-    //1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
