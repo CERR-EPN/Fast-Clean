@@ -9,23 +9,25 @@ import android.widget.TextView
 
 class RegistroActivity : AppCompatActivity() {
     lateinit var buttonRegistro: Button
+    lateinit var buttonIngreso: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
         buttonRegistro = findViewById(R.id.buttonRegistro)
-        setupActivityLink()
+        buttonIngreso = findViewById(R.id.buttonIngreso)
+
         buttonRegistro.setOnClickListener{
             val intencion = Intent(this, PrincipalActivity::class.java)
             startActivity(intencion)
 
         }
-    }
-    fun setupActivityLink() {
-        val linkTextView = findViewById<TextView>(R.id.textViewIngreso)
-        linkTextView.setTextColor(Color.BLUE)
-        linkTextView.setOnClickListener {
-            val switchActivityIntent = Intent(this, LoginActivity::class.java)
-            startActivity(switchActivityIntent)
+
+        buttonIngreso.setOnClickListener{
+            val intencion = Intent(this, LoginActivity::class.java)
+            startActivity(intencion)
+
         }
     }
+
+
 }
