@@ -10,55 +10,64 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="124dp"
-            android:layout_marginTop="60dp"
-            app:srcCompat="@drawable/prolimpio" />
-
-
-
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pagar"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="55dp">
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Monto a pagar:"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/editTextTextMontoPagar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:editable="false"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="18sp" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:hint="Monto Total a Pagar"
+                app:hintTextColor="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidthFocused="2dp"
+                app:startIconTint="@color/black"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black">
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextTextMontoPagar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/grotesk_semibold"
+                    android:textColor="@color/black"
+                    android:enabled="false"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
         </LinearLayout>
+
 
         <Button
             android:id="@+id/buttonFinalizar"
-            android:layout_width="423dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Finalizar" />
+            android:layout_marginTop="30dp"
+            android:background="@color/black"
+            android:text="Finalizar Pago"
+            android:textColor="@color/white" />
+
+
+
 
     </LinearLayout>
+
 
 </ScrollView>
