@@ -16,12 +16,15 @@
 
     //Strings Login y Registro(Sign Up)
     <string name="registro">Crear Cuenta</string>
-    <string name="nombres">Nombres</string>
-    <string name="apellidos">Apellidos</string>
+    <string name="nombres">Nombre</string>
+    <string name="apellidos">Apellido</string>
     <string name="correo">Correo</string>
     <string name="contrasena">Contraseña</string>
     <string name="repetirpass">Repetir Contraseña</string>
-
+    <string name="ingresar">Ingresa tu correo</string>
+    <string name="pass">Ingresa tu contraseña</string>
+    <string name="recuerdame">Recordarme</string>
+    <string name="olvidar">¿Olvidaste tu Contraseña?</string>
 
 
 </resources>
