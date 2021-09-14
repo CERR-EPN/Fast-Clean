@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
         editTextPassword = findViewById(R.id.editTextPassword)
         auth = Firebase.auth
         buttonLogin.setOnClickListener{
-          // AutenticarUsuario(editTextUsuario.text.toString(),editTextPassword.text.toString())
+            // AutenticarUsuario(editTextUsuario.text.toString(),editTextPassword.text.toString())
         }
 
         buttonRegistroLogin.setOnClickListener {
