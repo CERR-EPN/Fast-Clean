@@ -45,7 +45,7 @@ class ElegirActivity : AppCompatActivity() {
                     adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
                             val intencion = Intent(this@ElegirActivity, PagoActivity::class.java)
-                          //  intencion.putExtra("empresa", emp[position])
+                            //  intencion.putExtra("empresa", emp[position])
                             startActivity(intencion)
                         }
                     })

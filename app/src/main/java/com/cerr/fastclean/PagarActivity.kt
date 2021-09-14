@@ -14,7 +14,6 @@ class PagarActivity : AppCompatActivity() {
         buttonFinalizar.setOnClickListener{
             val intencion = Intent(this, PrincipalActivity::class.java)
             startActivity(intencion)
-
         }
     }
 }

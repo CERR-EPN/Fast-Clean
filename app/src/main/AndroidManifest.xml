@@ -57,11 +57,15 @@
         <activity
             android:name=".PagoActivity"
             android:parentActivityName=".PrincipalActivity"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".TipoPagoActivity"
             android:parentActivityName=".PagoActivity"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".PagarActivity"
+            android:parentActivityName=".TipoPagoActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
