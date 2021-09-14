@@ -26,5 +26,29 @@
     <string name="recuerdame">Recordarme</string>
     <string name="olvidar">¿Olvidaste tu Contraseña?</string>
 
+    //Strings tipo de servicios
+    <string-array name="cuartos">
+        <item>Cuartos</item>
+        <item>1 Cuarto</item>
+        <item>2 Cuartos</item>
+        <item>3 Cuartos</item>
+        <item>4 Cuartos</item>
+        <item>Mas de 4 cuartos</item>
+    </string-array>
+    <string-array name="Baños">
+        <item>Baños</item>
+        <item>1 Baño</item>
+        <item>2 Baños</item>
+        <item>3 Baños</item>
+        <item>4 Baños</item>
+        <item>Mas de 4 baños</item>
+    </string-array>
+    <string-array name="Exteriores">
+        <item>Exteriores</item>
+        <item>Piscina</item>
+        <item>Patio</item>
+        <item>Jardin</item>
+    </string-array>
+
 
 </resources>
