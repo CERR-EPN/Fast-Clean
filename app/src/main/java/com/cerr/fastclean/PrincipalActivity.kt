@@ -4,8 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageButton
+import android.view.View
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.widget.Toolbar
+import com.google.firebase.auth.FirebaseAuth
+
 
 class PrincipalActivity : AppCompatActivity() {
     lateinit var ButtonCasa: Button
@@ -15,10 +21,19 @@ class PrincipalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
+        //Inicialización de variables
         ButtonCasa = findViewById(R.id.buttonCasa)
         ButtonEdificio = findViewById(R.id.buttonEdificio)
         ButtonOficina = findViewById(R.id.buttonOficina)
         ButtonEventos = findViewById(R.id.buttonEventos)
+        //Quitar backbutton
+        if (supportActionBar != null) {
+            val actionBar: ActionBar? = supportActionBar
+            if (actionBar != null) {
+                actionBar.setDisplayHomeAsUpEnabled(false)
+            }
+        }
+        //funcionalidad
         ButtonCasa.setOnClickListener{
             val intencion = Intent(this, ElegirActivity::class.java)
             startActivity(intencion)
@@ -48,6 +63,20 @@ class PrincipalActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.perfil  -> {
+                true
+            }
+            R.id.cerrarSesion -> {
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
 
 }

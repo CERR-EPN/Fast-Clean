@@ -17,7 +17,7 @@ class MyAdapter(private val listEmpresas : ArrayList<Empresas>) : RecyclerView.A
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentitem = listEmpresas[position]
         holder.nombreEmpresa.text = currentitem.empresa
-        holder.descripcion.text = currentitem.descripcion
+        holder.descripcion.text = currentitem.descriocion
         holder.precio.text = currentitem.precio
 
     }

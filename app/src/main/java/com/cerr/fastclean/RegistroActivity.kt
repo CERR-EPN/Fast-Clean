@@ -7,9 +7,11 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
 
@@ -37,7 +39,7 @@ class RegistroActivity : AppCompatActivity() {
         //funcionalidad
         buttonRegistro.setOnClickListener{
             if(validarUsuario()){
-                crearUsuario(editTextCorreoUsuario.text.toString(),editTextContraseñaUsuario.text.toString())
+                crearUsuario(editTextNombreUsuario.text.toString(),editTextApellidoUsuario.text.toString(),editTextCorreoUsuario.text.toString(),editTextContraseñaUsuario.text.toString())
             }
         // val intencion = Intent(this, PrincipalActivity::class.java)
             //startActivity(intencion)
@@ -117,9 +119,10 @@ class RegistroActivity : AppCompatActivity() {
         val pattern = Pattern.compile(regx, Pattern.CASE_INSENSITIVE)
         return pattern.matcher(txt).matches()
     }
-    fun crearUsuario(correo:String,contrasena:String) {
+    fun crearUsuario(nombre: String,apellido: String,correo:String,contrasena:String) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(correo,contrasena).addOnCompleteListener() {
             if (it.isSuccessful) {
+                ingresarNuevoUsuario(procesarNuevoUsuario(nombre,apellido,correo))
                 val intent = Intent(this, PrincipalActivity::class.java)
                 startActivity(intent)
             } else {
@@ -135,5 +138,23 @@ class RegistroActivity : AppCompatActivity() {
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
+    fun procesarNuevoUsuario(nombre:String,apellido:String,correo: String):Usuario{
+        val nombre1=nombre.uppercase()
+        val apellido1=apellido.uppercase()
+        val usuario = Usuario(nombre1,apellido1,correo)
+    return usuario
+    }
+    fun ingresarNuevoUsuario(usuario:Usuario){
+        val db = Firebase.firestore
+        db.collection("usuarios")
+            .add(usuario)
+            .addOnSuccessListener { documentReference ->
+                Toast.makeText(this,"Usuario ingresado exitosamente", Toast.LENGTH_LONG).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this,"Error al ingresar un nuevo usuario:-> {$e.message}", Toast.LENGTH_LONG).show()
+            }
+    }
+
 
 }

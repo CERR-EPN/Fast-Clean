@@ -1,3 +1,3 @@
 package com.cerr.fastclean
 
-data class Empresas(var empresa : String ?= null,var descripcion : String ?= null,var precio : String ?= null)
+data class Empresas(var empresa : String ?= null,var descriocion : String ?= null,var precio : String ?= null)
