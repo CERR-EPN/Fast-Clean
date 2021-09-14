@@ -1,7 +1,7 @@
 package com.cerr.fastclean
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -9,15 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cerr.fastclean.databinding.EmpresasItemBinding
 import com.google.firebase.database.*
-import com.google.firebase.database.DatabaseReference
 
 class ElegirActivity : AppCompatActivity() {
 
     private lateinit var dbref : DatabaseReference
     private lateinit var userRecyclerview : RecyclerView
     private lateinit var userArrayList : ArrayList<Empresas>
-    lateinit var nombreEmpresa: EditText
+    lateinit var emp : Array<String>
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_elegir)
@@ -25,6 +25,9 @@ class ElegirActivity : AppCompatActivity() {
         userRecyclerview.layoutManager = LinearLayoutManager(this)
         userRecyclerview.setHasFixedSize(true)
         userArrayList = arrayListOf<Empresas>()
+        emp = arrayOf(
+            getString(R.id.tvnombreEmpresa)
+        )
         getEmpresaData()
     }
 
@@ -37,19 +40,17 @@ class ElegirActivity : AppCompatActivity() {
                         val empresaUser = userSnapshot.getValue(Empresas::class.java)
                         userArrayList.add(empresaUser!!)
                     }
+
                     var adapter = MyAdapter(userArrayList)
                     userRecyclerview.adapter = adapter
                     adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
-
+                            val intencion = Intent(this@ElegirActivity, ServicioActivity::class.java)
+                            intencion.putExtra("empresa", emp[position])
+                            startActivity(intencion)
                         }
                     })
                 }
-            }
-
-            fun nextActivity(){
-                val empresa = nombreEmpresa.text.toString()
-
             }
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
