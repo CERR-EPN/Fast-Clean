@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.cerr.fastclean.databinding.EmpresasItemBinding
 import com.google.firebase.database.*
 
 class ElegirActivity : AppCompatActivity() {
