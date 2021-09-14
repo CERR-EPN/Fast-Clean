@@ -55,12 +55,12 @@
             android:parentActivityName=".LoginActivity"
             android:theme="@style/Theme.AppCompat.Light"></activity>
         <activity
-            android:name=".ServicioActivity"
+            android:name=".PagoActivity"
             android:parentActivityName=".PrincipalActivity"
             android:theme="@style/Theme.AppCompat.Light"></activity>
         <activity
-            android:name=".PagarActivity"
-            android:parentActivityName=".ServicioActivity"
+            android:name=".TipoPagoActivity"
+            android:parentActivityName=".PagoActivity"
             android:theme="@style/Theme.AppCompat.Light"></activity>
         <activity
             android:name=".MapsActivity"
