@@ -51,47 +51,47 @@ class RegistroActivity : AppCompatActivity() {
         val repetirContrasena = editTextRepetirContraseña.text.toString()
 
         if(nombre.isEmpty()){
-            editTextNombreUsuario.setError("El nombre es obligatorio")
+            editTextNombreUsuario.setError("El nombre es obligatorio",null)
             editTextNombreUsuario.requestFocus()
             return false
         }
         if(!validarLetras(nombre)){
-            editTextNombreUsuario.setError("Solo se aceptan letras")
+            editTextNombreUsuario.setError("Solo se aceptan letras",null)
             editTextNombreUsuario.requestFocus()
             return false
         }
         if(apellido.isEmpty()){
-            editTextApellidoUsuario.setError("El apellido es obligatorio")
+            editTextApellidoUsuario.setError("El apellido es obligatorio",null)
             editTextApellidoUsuario.requestFocus()
             return false
         }
         if(!validarLetras(apellido)){
-            editTextApellidoUsuario.setError("Solo se aceptan letras")
+            editTextApellidoUsuario.setError("Solo se aceptan letras",null)
             editTextApellidoUsuario.requestFocus()
             return false
         }
         if(correo.isEmpty()){
-            editTextCorreoUsuario.setError("El correo es obligatorio")
+            editTextCorreoUsuario.setError("El correo es obligatorio",null)
             editTextCorreoUsuario.requestFocus()
             return false
         }
         if(!validarEmail(correo)){
-            editTextCorreoUsuario.setError("El formato del correo no es correcto")
+            editTextCorreoUsuario.setError("El formato del correo no es correcto",null)
             editTextCorreoUsuario.requestFocus()
             return false
         }
         if(contrasena.isEmpty()){
-            editTextContraseñaUsuario.setError("La contraseña es obligatoria")
+            editTextContraseñaUsuario.setError("La contraseña es obligatoria",null)
             editTextContraseñaUsuario.requestFocus()
             return false
         }
         if(repetirContrasena.isEmpty()){
-            editTextRepetirContraseña.setError("El campo es obligatorio")
+            editTextRepetirContraseña.setError("El campo es obligatorio",null)
             editTextRepetirContraseña.requestFocus()
             return false
         }
         if(!contrasena.equals(repetirContrasena)){
-            editTextRepetirContraseña.setError("Las contraseñas no coinciden")
+            editTextRepetirContraseña.setError("Las contraseñas no coinciden",null)
             editTextRepetirContraseña.requestFocus()
             return false
         }
