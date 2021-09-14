@@ -7,6 +7,10 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
 
 class RegistroActivity : AppCompatActivity() {
@@ -32,7 +36,9 @@ class RegistroActivity : AppCompatActivity() {
         editTextRepetirContraseña = findViewById(R.id.EditTextRepetirContraseña)
         //funcionalidad
         buttonRegistro.setOnClickListener{
-            validarUsuario()
+            if(validarUsuario()){
+                crearUsuario(editTextCorreoUsuario.text.toString(),editTextContraseñaUsuario.text.toString())
+            }
         // val intencion = Intent(this, PrincipalActivity::class.java)
             //startActivity(intencion)
         }
@@ -85,6 +91,11 @@ class RegistroActivity : AppCompatActivity() {
             editTextContraseñaUsuario.requestFocus()
             return false
         }
+        if(contrasena.length<8){
+            editTextContraseñaUsuario.setError("La contraseña debe tener al menos 8 caracteres",null)
+            editTextContraseñaUsuario.requestFocus()
+            return false
+        }
         if(repetirContrasena.isEmpty()){
             editTextRepetirContraseña.setError("El campo es obligatorio",null)
             editTextRepetirContraseña.requestFocus()
@@ -106,4 +117,23 @@ class RegistroActivity : AppCompatActivity() {
         val pattern = Pattern.compile(regx, Pattern.CASE_INSENSITIVE)
         return pattern.matcher(txt).matches()
     }
+    fun crearUsuario(correo:String,contrasena:String) {
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(correo,contrasena).addOnCompleteListener() {
+            if (it.isSuccessful) {
+                val intent = Intent(this, PrincipalActivity::class.java)
+                startActivity(intent)
+            } else {
+                alerta()
+            }
+        }
+    }
+    private fun alerta(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("El correo ya se encuentra ocupado")
+        builder.setMessage("No se pudo registrar el usuario")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
 }
