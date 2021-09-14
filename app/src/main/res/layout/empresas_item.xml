@@ -25,7 +25,8 @@
                 android:layout_height="wrap_content"
                 android:text="Empresa: "
                 android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="18sp"
+                android:fontFamily="@font/grotesk_semibold"
                 android:textStyle="bold"/>
 
             <TextView
@@ -35,7 +36,7 @@
                 android:layout_marginStart="8dp"
                 android:text="Arya"
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -50,7 +51,8 @@
                 android:layout_height="wrap_content"
                 android:text="Descripción: "
                 android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="18sp"
+                android:fontFamily="@font/grotesk_semibold"
                 android:textStyle="bold"/>
 
             <TextView
@@ -60,7 +62,7 @@
                 android:layout_marginStart="8dp"
                 android:text="Stark"
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -75,7 +77,8 @@
                 android:layout_height="wrap_content"
                 android:text="Precio: "
                 android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="18sp"
+                android:fontFamily="@font/grotesk_semibold"
                 android:textStyle="bold"/>
 
             <TextView
@@ -85,7 +88,7 @@
                 android:layout_marginStart="8dp"
                 android:text="20"
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
