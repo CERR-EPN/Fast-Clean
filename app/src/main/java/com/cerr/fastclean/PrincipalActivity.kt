@@ -42,8 +42,12 @@ class PrincipalActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
         menuInflater.inflate(R.menu.menu_principal,menu)
+        this.setTitle("Categorias")
         return super.onCreateOptionsMenu(menu)
     }
+
+
 
 }
