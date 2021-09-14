@@ -1,6 +1,7 @@
 package com.cerr.fastclean
 
 import android.content.Intent
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -36,7 +37,6 @@ class ElegirActivity : AppCompatActivity() {
                         val empresaUser = userSnapshot.getValue(Empresas::class.java)
                         userArrayList.add(empresaUser!!)
                     }
-
                     var adapter = MyAdapter(userArrayList)
                     userRecyclerview.adapter = adapter
                     adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
@@ -49,9 +49,7 @@ class ElegirActivity : AppCompatActivity() {
 
             fun nextActivity(){
                 val empresa = nombreEmpresa.text.toString()
-                val intencion = Intent(this, ServicioActivity::class.java)
-                intencion.putExtra( EXTRA_lOGIN,empresa)
-                startActivity(intencion)
+
             }
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
