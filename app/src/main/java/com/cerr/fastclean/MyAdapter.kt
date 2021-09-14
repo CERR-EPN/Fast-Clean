@@ -27,8 +27,8 @@ class MyAdapter(private val listEmpresas : ArrayList<Empresas>) : RecyclerView.A
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentitem = listEmpresas[position]
         holder.nombreEmpresa.text = currentitem.empresa
-        holder.descripcion.text = currentitem.descriocion
-        holder.precio.text = currentitem.precio
+        holder.descripcion.text = currentitem.descripcion
+        holder.ubicacion.text = currentitem.ubicacion
     }
 
     override fun getItemCount(): Int {
@@ -38,7 +38,7 @@ class MyAdapter(private val listEmpresas : ArrayList<Empresas>) : RecyclerView.A
     class MyViewHolder(itemView : View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
         val nombreEmpresa : TextView = itemView.findViewById(R.id.tvnombreEmpresa)
         val descripcion : TextView = itemView.findViewById(R.id.tvdescripcion)
-        val precio : TextView = itemView.findViewById(R.id.tvprecio)
+        val ubicacion : TextView = itemView.findViewById(R.id.tvubicacion)
         init {
             itemView.setOnClickListener {
                 listener.onItemClick(adapterPosition)

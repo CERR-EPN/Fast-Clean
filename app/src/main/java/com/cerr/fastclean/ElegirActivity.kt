@@ -47,7 +47,7 @@ class ElegirActivity : AppCompatActivity() {
                 }
             }
 
-            fun nextActivity{
+            fun nextActivity(){
                 val empresa = nombreEmpresa.text.toString()
                 val intencion = Intent(this, ServicioActivity::class.java)
                 intencion.putExtra( EXTRA_lOGIN,empresa)
